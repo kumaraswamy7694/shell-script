@@ -95,3 +95,20 @@ shell script by default will not stop if it faces error it is out responsdibilit
 exit status:
 $? it will store the previous command status
 $? is 0 then previous command status is success.
+
+less lines of code more work.
+
+we have a concept called functions:
+you will keep some code inside function which is more often repeated and call when ever you enquire.
+functions will do behalf of us and it will update what happen.
+FUNCTION_NAME(){
+here you write your statemnet and call whenever they required.
+}
+
+log files are important to know what happend.
+
+> (redirection): it will only success output.
+> ls -l > ls.log
+> ls -l > ls.log
+> 1 success
+> 2 failurele
