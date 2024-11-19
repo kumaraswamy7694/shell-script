@@ -48,3 +48,9 @@ shell scripting.
 how to execut the script through shiband.
 echo to print
 echo " hello world, iam learning devops "
+
+variables
+dry ---dont repeat yourself
+derive the forula , finally you submit
+create a variable and assign value to it..
+whenever you are using instead of value , replace with varible name
