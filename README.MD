@@ -91,3 +91,7 @@ if root user install mysql
 100 statements:
 you got error at statement 10,
 shell script by default will not stop if it faces error it is out responsdibility to check for errors.
+
+exit status:
+$? it will store the previous command status
+$? is 0 then previous command status is success.
