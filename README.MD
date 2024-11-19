@@ -112,3 +112,7 @@ log files are important to know what happend.
 > ls -l > ls.log
 > 1 success
 > 2 failurele
+
+special variables.
+
+colours in shell scripting.

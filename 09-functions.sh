@@ -5,13 +5,17 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+
 VALIDATE(){
    if [ $1 -ne 0 ]
    then
-        echo "$2...FAILURE"
+        echo "$2...$R FAILURE $N"
         exit 1
     else
-        echo "$2...SUCCESS"
+        echo "$2...$GSUCCESS $N "
     fi
 }
 
@@ -28,3 +32,4 @@ VALIDATE $? "Installing MySQL"
 
 dnf install git -y &>>$LOGFILE
 VALIDATE $? "Installing Git"
+
