@@ -82,3 +82,12 @@ These command will run is expression is true
 else
 run if expression is false
 fi
+
+install sql
+check root user or not
+if not root user exit the porg and inform user to run with sudo access
+if root user install mysql
+
+100 statements:
+you got error at statement 10,
+shell script by default will not stop if it faces error it is out responsdibility to check for errors.
