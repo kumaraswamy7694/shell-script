@@ -1,5 +1,7 @@
 #!/bin/bash
 
 echo "Hello, I am learning DevOps"
-echo "Ramesh: Hi suresh , good morning"
-echo "suresh: hi ramesh , iam good . How are you "
+PERSON1=Ramesh
+PERSON2=Suresh
+echo "Ramesh: Hi $PERSON1 , good morning"
+echo "suresh: hi $PERSON2 , iam good . How are you "
