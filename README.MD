@@ -58,3 +58,12 @@ whenever you are using instead of value , replace with varible name
 i am going to connect to DB, so i need password.
 prompt the user to enter
 read command - it takes the input from the terminal
+
+int i = 0
+float a =2.3
+boolean true/false
+string name=saikumar
+
+---
+
+array for multiple values.
