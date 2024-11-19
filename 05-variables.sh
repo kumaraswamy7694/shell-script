@@ -6,4 +6,6 @@
  echo "please enter you password"
  read PASSWORD
  #echo "password entered is :$PASSWORD"
- echo "username and password entered is :$USERNAME $PASSWORD "
+ read AGE
+ echo "you age is :$AGE"
+ echo "username ,password and age entered is :$USERNAME $PASSWORD "
