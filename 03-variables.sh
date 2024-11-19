@@ -14,3 +14,4 @@ echo "$PERSON2:: not bad. I am thinking to upgrade to DevOps"
 echo "date is $DATE"
 echo "cal is $CAL"
 ls -l
+cat README.MD
