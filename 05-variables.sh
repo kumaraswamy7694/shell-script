@@ -1,6 +1,6 @@
 #!/bin/bash
 
- NAME=KUMARSWAMY
+ NAME=$1
  echo "hello $NAME, welcome to HYD"
  echo " enter you age"
  read AGE
