@@ -5,4 +5,4 @@ then
     echo "ERRO : please run this script with root access "
 fi
 
-yum install git -y 
+yum install mysql -y 
