@@ -54,3 +54,7 @@ dry ---dont repeat yourself
 derive the forula , finally you submit
 create a variable and assign value to it..
 whenever you are using instead of value , replace with varible name
+
+i am going to connect to DB, so i need password.
+prompt the user to enter
+read command - it takes the input from the terminal
