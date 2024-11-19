@@ -1,11 +1,9 @@
 #!/bin/bash
 
- echo "please enter you username"
- read USERNAME # this is the variable where the value of the one uesr entered
- #echo "username entered is :$USERNAME"
- echo "please enter you password"
- read PASSWORD
- #echo "password entered is :$PASSWORD"
+ NAME=$1
+ echo "hello $NAME, welcome to HYD"
  read AGE
- echo "you age is :$AGE"
- echo "username ,password and age entered is :$USERNAME $PASSWORD "
+ echo "you are $AGE old and also eligible for voting"
+ read PLACE
+ echo "you are from $PLACE ,such a bueatyful city"
+ 
