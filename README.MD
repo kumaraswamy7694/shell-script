@@ -42,3 +42,9 @@ git add . ; git commit -m "some-message"; git push -u origin main
 ```
 
 ```
+
+shell scripting.
+#/bin/bash called shibang will let know the linux
+how to execut the script through shiband.
+echo to print
+echo " hello world, iam learning devops "
