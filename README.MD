@@ -116,3 +116,7 @@ log files are important to know what happend.
 special variables.
 
 colours in shell scripting.
+
+loops
+if you ask 10 pakages to insatll
+i want to loop it , then install one by one
