@@ -1,10 +1,8 @@
 #!/bin/bash
 
- NAME=$1
- echo "hello $NAME, welcome to HYD"
- echo " enter you age"
- read AGE
- echo "you are $AGE old and also eligible for voting"
- echo "enter you place of living"
- read PLACE
- echo "you are from $PLACE ,such a bueatyful city in India"
+echo " please enter you username"
+read  USERNME 
+echo "username entered is $USERNAME"
+echo "please enter your password"
+read -s PASSWORD
+echo " password entered is : $PASSWORD"
