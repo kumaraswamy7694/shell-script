@@ -67,3 +67,18 @@ string name=saikumar
 ---
 
 array for multiple values.
+
+---
+
+condition in shell script
+
+simple algorithm to install git
+you should be root user
+
+if []
+then
+These command will run is expression is true
+
+else
+run if expression is false
+fi
