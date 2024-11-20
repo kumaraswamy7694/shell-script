@@ -17,7 +17,14 @@ DISK_USAGE_THERESHOLD=1
 # ifs= means internal field seperation
 while IFS= read line
 do 
-    echo "output :$line"
+    usage=$ (echo $line | awk '{print $6}' | cut -d % -f1 )
+    partition=$(echo $line | awk '{print $1}')
+    #now you need to check the threashold
+    if [$usage -gt $DISK_USAGE_THERESHOLD];
+    then 
+        message+=" HIGH DISK USAGE ON $partition: $usage
+    fi
 done <<< $DISK_USAGE
 
+echo "message: $message"
 
