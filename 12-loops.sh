@@ -2,36 +2,36 @@
 
 DATE=$(date +%F)
 LOGSDIR=/home/centos/shellscript-logs
-SCRIPT_NAME=$0
-LOGFILE=$LOGSDIR/$0-$DATE.log
+SCRIPT_NAME=$(basename $0)
+LOGFILE=$LOGSDIR/$SCRIPT_NAME-$DATE.log
 USERID=$(id -u)
 R="\e[31m"
 N="\e[0m"
 Y="\e[33m"
-if [$USERID -ne 0]
-then
-    echo -e " $R error:: please run this script with root access "
+
+# Check if the script is run as root
+if [ $USERID -ne 0 ]; then
+    echo -e " $R error:: please run this script with root access $N"
     exit 1
 fi 
 
-VALIDATE (){
-    if [ $1 -ne 0];
-    then 
-        echo -e " $R installing $2.. FAILIRE "
+# Validation function
+VALIDATE() {
+    if [ $1 -ne 0 ]; then
+        echo -e " $R installing $2 .. FAILURE $N"
         exit 1
     else 
-        echo -e " installing $2 .. $G success"
+        echo -e " installing $2 .. $Y success $N"
     fi
 }
 
-for i in $@ # it will loop from 1 to 20
-do
-    yum list installed $i &>>$LOGFILE
-    if [ $? -ne 0]
-    then
-        echo "$? is not installed, lets install it"
+# Loop through the arguments
+for i in "$@"; do
+    rpm -q $i &>>$LOGFILE
+    if [ $? -ne 0 ]; then
+        echo "$i is not installed, let's install it"
         yum install $i -y &>>$LOGFILE
-        VALIDATE $? "$I"
+        VALIDATE $? "$i"
     else 
         echo -e " $Y $i is already installed $N "
     fi  
