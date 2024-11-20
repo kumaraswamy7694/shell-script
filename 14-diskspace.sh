@@ -1,30 +1,45 @@
 #!/bin/bash
-# colours
-# validation
-# log
+# Colours for output formatting
+R="\e[31m"  # Red
+G="\e[32m"  # Green
+N="\e[0m"   # Reset
+Y="\e[33m"  # Yellow
+
+# Log file setup
 LOGFILE_DIRECTORY=/tmp
 DATE=$(date +%F-%H-%M-%S)
-SCRIPT_NAME=$0
-LOGFILE=$LOGFILE_DIRECTORY/$SCRIPT_NAME-$DATE.log
-R="\e[31m"
-G="\e[32m"
-N="\e[0m"
-Y="\e[33m"
+SCRIPT_NAME=$(basename $0)
+LOGFILE="$LOGFILE_DIRECTORY/$SCRIPT_NAME-$DATE.log"
 
+# Disk usage threshold
+DISK_USAGE_THRESHOLD=1
+
+# Collect disk usage information
 DISK_USAGE=$(df -hT | grep -vE ' tmpfs|FileSystem ')
-DISK_USAGE_THERESHOLD=1
 
-# ifs= means internal field seperation
-while IFS= read line
+# Initialize the message variable to collect disk usage alerts
+message=""
+
+# Iterate over each line of disk usage information
+while IFS= read -r line
 do 
-    usage=$ (echo $line | awk '{print $6}' | cut -d % -f1 )
-    partition=$(echo $line | awk '{print $1}')
-    #now you need to check the threashold
-    if [$usage -gt $DISK_USAGE_THERESHOLD];
-    then 
-        message+=" HIGH DISK USAGE ON $partition: $usage
+    # Extract the usage percentage and partition name
+    usage=$(echo "$line" | awk '{print $6}' | cut -d '%' -f1)
+    partition=$(echo "$line" | awk '{print $1}')
+    
+    # Check if usage exceeds the threshold
+    if [ "$usage" -gt "$DISK_USAGE_THRESHOLD" ]; then 
+        # Append message for high disk usage
+        message+="$Y HIGH DISK USAGE ON $partition: $usage% $N\n"
     fi
-done <<< $DISK_USAGE
+done <<< "$DISK_USAGE"
 
-echo "message: $message"
+# Output the message
+if [ -n "$message" ]; then
+    echo -e "$message"
+else
+    echo "$G No partitions exceed the disk usage threshold. $N"
+fi
 
+# Optionally log to a file
+echo -e "$message" >> "$LOGFILE"
