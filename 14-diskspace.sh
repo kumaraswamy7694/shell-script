@@ -43,3 +43,4 @@ fi
 
 # Optionally log to a file
 echo -e "$message" >> "$LOGFILE"
+echo "This is a test mail & Date $(date)" | mail -s "message" info@joindevops.com
