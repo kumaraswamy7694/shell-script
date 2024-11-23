@@ -20,9 +20,6 @@ do
     echo "Creating $i instance..."
 
     # Run the AWS CLI command to create the instance
-    aws ec2 run-instances \
-        --image-id $IMAGE_ID \
-        --instance-type $INSTANCE_TYPE \
-        --security-group-ids $SECURITY_GROUP_ID \
-        --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]"
+    aws ec2 run-instances --image-id $IMAGE_ID --instance-type $INSTANCE_TYPE --security-group-ids $SECURITY_GROUP_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]"
+
 done
