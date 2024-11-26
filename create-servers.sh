@@ -6,6 +6,7 @@ IMAGE_ID=ami-0b4f379183e5706b9
 SECURITY_GROUP_ID=sg-0729448b7fb37ace1
 INSTANCE_TYPE=""
 DOMAIN_NAME=kumaraswamy.xyz
+HOSTED_ZONE_ID=Z011735029B6AONSQ3Z1E
 
 # Loop through each instance name
 for i in $@
