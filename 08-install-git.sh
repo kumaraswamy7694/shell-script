@@ -23,3 +23,12 @@ git --version
 #shell script by default will not stop will have exit status 
 #if $? -eq 0 previous command is success if not it is failure
 # -y without human interventtion
+
+yum install postfix -y 
+if [ $? -eq 0]
+then 
+    echo "installation of postfix is error"
+    exit 1
+else 
+    echo "installation of postfix is success"
+fi
