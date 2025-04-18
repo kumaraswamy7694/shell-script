@@ -14,7 +14,7 @@ yum install mysql -y
 if [ $? -eq 0 ]
 then 
     echo "installation of mysql is erorr"
-    exit  
+    exit 1
 else
     echo "installation of mysql is success"
 fi
