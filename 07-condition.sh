@@ -7,6 +7,6 @@ then
     echo "Given number $NUMBER is greater than 10"
 else
     echo "Given number $NUMBER is less than 10" 
-fi
+fi #your ending the conditon here
 
 #-gt, -lt, -eq, -ge, -le
