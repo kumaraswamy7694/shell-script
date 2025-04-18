@@ -10,8 +10,8 @@ then
     exit 1
 fi
 
-yum install git -y
+yum install sql -y
 git --version 
 #shell script by default will not stop will have exit status 
 #if $? -eq 0 previous command is success if not it is failure
-#
+# -y without human interventtion
