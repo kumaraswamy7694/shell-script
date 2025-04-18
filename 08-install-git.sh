@@ -11,7 +11,7 @@ then
 fi
 
 yum install mysql -y
-if [ $? -eq 0 ]
+if [ $? -ne 0 ]
 then 
     echo "installation of mysql is erorr"
     exit 1
@@ -25,7 +25,7 @@ git --version
 # -y without human interventtion
 
 yum install postfix -y 
-if [ $? -eq 0]
+if [ $? -ne 0]
 then 
     echo "installation of postfix is error"
     exit 1
