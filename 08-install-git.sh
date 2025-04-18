@@ -17,6 +17,7 @@ then
     exit  
 else
     echo "installation of mysql is success"
+fi
 
 git --version 
 #shell script by default will not stop will have exit status 
