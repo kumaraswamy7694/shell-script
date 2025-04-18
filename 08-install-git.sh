@@ -10,14 +10,14 @@ then
     exit 1
 fi
 
-yum install mysqll -y
+yum install mysql -y
 if [ $? -eq 0 ]
 then 
     echo "installation of mysql is erorr"
     exit  
 else
     echo "installation of mysql is success"
-    
+
 git --version 
 #shell script by default will not stop will have exit status 
 #if $? -eq 0 previous command is success if not it is failure
