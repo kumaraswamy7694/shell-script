@@ -9,4 +9,4 @@ then
     echo "error :: please runt this script with root access"
 fi
 yum install git -y
-  
+git --version 
