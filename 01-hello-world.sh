@@ -5,4 +5,4 @@ echo "hi hello world , iam learning devops "
 echo "script added"
 US1=kumar
 US2=sai
-echo "nuvvu $US1"
+echo "nuvvu $US1 and $US2 ela unnadu"
