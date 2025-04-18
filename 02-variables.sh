@@ -5,4 +5,3 @@ TIME=$(time)
 echo "hello, time is : $DATE" 
 echo "neeku time occhindi ra adi endnate $TIME"
    
-   
