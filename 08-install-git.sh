@@ -1,16 +1,12 @@
 #!/bin/bash
+#our prog goal is to install git.
+#check root user or not
+# if root user install mysql 
+# root user id is 0 if not id is 1000
 USERID=$(id -u)
 if [$USERID -ne 0]
 then
-    echo "ERRO : please run this script with root access "
+    echo "error :: please runt this script with root access"
 fi
-
-yum install mysql -y 
-yum install postfix -y
-if [$? -ne 0]
-then 
-    echo "installation of postfix is error"
-    exit 1
-else 
-    echo "installation of postfix is success"
-fi
+yum install git -y
+  
