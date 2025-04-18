@@ -8,3 +8,7 @@ echo "$SUM"
 
 PRODUCT=$((NUMBER1*NUMBER2))
 echo "$PRODUCT"
+
+DIFF=$((NUMBER1-NUMBER2))
+echo "$DIFF"
+   
