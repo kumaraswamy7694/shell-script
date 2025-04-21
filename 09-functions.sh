@@ -1,7 +1,8 @@
 #!/bin/bash
 
 USERID=$(id -u)
-
+DATE=$(date +%F:%H:%M:%S)
+LOGFILE=/tmp
 
 VALIDATE(){
    if [ $1 -ne 0 ]
