@@ -1,8 +1,8 @@
 #!/bin/bash
-
-USERID=$(id -u)
 DATE=$(date +%F:%H:%M:%S)
-LOGFILE=/tmp
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+
 
 VALIDATE(){
    if [ $1 -ne 0 ]
@@ -13,6 +13,7 @@ VALIDATE(){
         echo  -e "$2 is success"
     fi
 }
+USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
 then
@@ -22,8 +23,7 @@ then
 #    echo "You are super user."
 fi
 
-yum install mysql -y 
-
+yum install mysql -y &>>$LOGFILE
 VALIDATE $? "this is mysql installting"
 yum install postfix -y
 VALIDATE $? "installing postfix"
