@@ -1,9 +1,9 @@
 #!/bin/bash
 
-DATE=$(date +%F)
-LOGSDIR=/home/centos/shellscript-logs
-SCRIPT_NAME=$(basename $0)
-LOGFILE=$LOGSDIR/$SCRIPT_NAME-$DATE.log
+# DATE=$(date +%F)
+# LOGSDIR=/home/centos/shellscript-logs
+# SCRIPT_NAME=$(basename $0)
+# LOGFILE=$LOGSDIR/$SCRIPT_NAME-$DATE.log
 USERID=$(id -u)
 R="\e[31m"
 N="\e[0m"
@@ -16,14 +16,14 @@ if [ $USERID -ne 0 ]; then
 fi 
 
 # Validation function
-VALIDATE() {
-    if [ $1 -ne 0 ]; then
-        echo -e " $R installing $2 .. FAILURE $N"
-        exit 1
-    else 
-        echo -e " installing $2 .. $Y success $N"
-    fi
-}
+# VALIDATE() {
+#     if [ $1 -ne 0 ]; then
+#         echo -e " $R installing $2 .. FAILURE $N"
+#         exit 1
+#     else 
+#         echo -e " installing $2 .. $Y success $N"
+#     fi
+# }
 
 # Loop through the arguments
 for i in $@
