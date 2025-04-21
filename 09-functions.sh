@@ -30,7 +30,7 @@ fi
 
 yum install mysql -y &>>$LOGFILE
 VALIDATE $? "this is mysql installting"
-yum install postfix -y
+yum install postfix -y &>>$LOGFILE
 VALIDATE $? "installing postfix"
     
 
