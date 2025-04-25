@@ -1,5 +1,6 @@
 #!/bin/bash
 # Colours for output formatting
+#every script has three logdirectory aloso
 R="\e[31m"  # Red
 G="\e[32m"  # Green
 N="\e[0m"   # Reset
