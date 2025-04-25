@@ -18,11 +18,16 @@ LOGFILE="$LOGFILE_DIRECTORY/$SCRIPT_NAME-$DATE.log"
 # Collect disk usage information
 DISK_USAGE=$(df -hT | grep -vE ' tmpfs|FileSystem ')
 DISK_USAGE_THRESHOLD=1
+message=""
 # Initialize the message variable to collect disk usage alerts
 
 
 # Iterate over each line of disk usage information
 while IFS= read -r line
 do 
-    echo "output: $line"
+    usage=$(echo "$line" | awk '{print $6}' | cut -d % -f1) 
+    partition=$(echo "$line" | awk '{print $1}')
+    if [ "$usage" -ge "$DISK_USAGE_THRESHOLD" ]; then
+        message+="Disk usage on $partition is at $usage%.\n"
+    fi
 done <<< "$DISK_USAGE"
