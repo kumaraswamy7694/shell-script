@@ -26,9 +26,9 @@ message=""
 while IFS= read -r line
 do 
     usage=$(echo "$line" | awk '{print $6}' | cut -d % -f1) 
-    partition=$(echo "$line" | awk '{print $1}')
-    if [ "$usage" -ge "$DISK_USAGE_THRESHOLD" ]; then
-        message+="Disk usage on $partition is at $usage%.\n"
+    partition=$(echo $line | awk '{print $1}')
+    if [ $usage -gt $DISK_USAGE_THRESHOLD ]; then
+        message+="Disk usage on $partition : is at $usage \n"
     fi
-done <<< "$DISK_USAGE"
-echo "message: #$message"
+done <<< $DISK_USAGE
+echo "message: $message"
