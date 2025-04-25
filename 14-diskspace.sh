@@ -31,3 +31,4 @@ do
         message+="Disk usage on $partition is at $usage%.\n"
     fi
 done <<< "$DISK_USAGE"
+echo "message: #$message"
